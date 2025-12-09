@@ -191,20 +191,23 @@ const AboutSection = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
 
               {/* Image container */}
-              <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              <div className="relative w-full h-auto min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white flex items-center justify-center bg-gray-100">
                 {/* Gradient overlays */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/10 to-pink-600/20 z-10 group-hover:opacity-50 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>
 
                 {/* Image */}
-                <Image
-                  src="/assets/images/apply-bg.jpg"
-                  alt="S.B. Patil Sir - Founder"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src="/assets/images/imgs/img16.png"
+                    alt="S.B. Patil Sir - Founder"
+                    width={600}
+                    height={800}
+                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 90vw, 50vw"
+                    priority
+                  />
+                </div>
 
                 {/* Floating badge */}
                 <motion.div
@@ -231,7 +234,7 @@ const AboutSection = () => {
                   <div className="bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-2xl border border-gray-200">
                     <div className="text-center">
                       <div className="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                        20+
+                        30+
                       </div>
                       <div className="text-sm font-semibold text-gray-600">
                         Years Experience

@@ -13,8 +13,9 @@ export default function GalleryPage() {
   });
 
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-
+  
   const galleryItems = [
+    { image: '/assets/images/imgs/img16.png', title: 'Better career opportunities', category: 'Innovation' },
     { image: '/assets/images/imgs/img2.jpg', title: 'Our Coaching Center', category: 'Infrastructure' },
     { image: '/assets/images/imgs/img3.jpg', title: 'What we Achieve', category: 'Achievements' },
     { image: '/assets/images/imgs/img4.jpg', title: 'This is Our pride', category: 'Success' },
