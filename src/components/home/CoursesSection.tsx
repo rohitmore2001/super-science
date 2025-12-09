@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaGraduationCap, FaFlask, FaRocket, FaUserMd, FaTrophy, FaBolt, FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 
 const CoursesSection = () => {
@@ -178,11 +179,13 @@ const CoursesSection = () => {
 
                 {/* Image Section */}
                 <div className="relative h-72 overflow-hidden rounded-t-3xl">
-                  <img
+                  <Image
                     src={course.image}
                     alt={course.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                    loading="eager"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    priority
                   />
 
                   {/* Enhanced gradient overlays */}

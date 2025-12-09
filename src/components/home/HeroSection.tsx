@@ -317,7 +317,7 @@ const HeroSection = () => {
                   </div>
                 </div>
                 <p className="mt-3 text-xs text-center text-gray-400">
-                  We'll get back to you within 24 hours
+                  We&apos;ll get back to you within 24 hours
                 </p>
               </form>
             </motion.div>
