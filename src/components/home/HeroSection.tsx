@@ -175,7 +175,7 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 shadow-2xl">
                   <p className="text-lg md:text-xl text-gray-100 leading-relaxed">
-                    Super Science Academy, Gadhinglaj, is dedicated to providing <span className="font-bold text-yellow-300">top-quality education</span> to students from <span className="font-bold text-orange-300">8th to 12th grade</span>. We specialize in preparing students for competitive exams like <span className="font-bold text-blue-300">IIT-JEE</span>, <span className="font-bold text-green-300">NEET</span>, <span className="font-bold text-purple-300">MHT-CET,</span> <span className="font-bold text-blue-300">State Board</span>, and other national and state-level exams.
+                    Super Science Academy, Gadhinglaj, is dedicated to providing <span className="font-bold text-yellow-300">top-quality education</span> to students from <span className="font-bold text-orange-300">8th to 12th grade</span>. We specialize in preparing students for competitive exams like <span className="font-bold text-blue-300">IIT-JEE</span>, <span className="font-bold text-green-300">NEET</span>, <span className="font-bold text-purple-300">MHT-CET,</span> <span className="font-bold text-blue-300">State Board</span> and other national and state-level exams.
                   </p>
                 </div>
               </div>
