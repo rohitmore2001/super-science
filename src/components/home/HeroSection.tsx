@@ -5,14 +5,25 @@ import { motion } from 'framer-motion';
 import { FaRocket, FaGraduationCap, FaAward, FaWhatsapp } from 'react-icons/fa';
 
 const HeroSection = () => {
+  const courses = [
+    'IIT Medical foundation course for 8th, 9th, and 10th grade students',
+    'Science Stream Coaching for 11th and 12th Grade',
+    'JEE Mains and Advanced Preparation',
+    'NEET Coaching',
+    'MHT-CET Preparation',
+    'MHT-CET Crash Course',
+    "Others"
+  ];
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    school: ''
+    school: '',
+    course: ''
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -25,6 +36,7 @@ const HeroSection = () => {
       `*Name:* ${formData.name}%0A` +
       `*Email:* ${formData.email}%0A` +
       `*Phone:* ${formData.phone}%0A` +
+      `*Course Interested In:* ${formData.course || 'Not specified'}%0A` +
       `*School/College:* ${formData.school || 'Not provided'}`;
 
     // Open WhatsApp with pre-filled message
@@ -35,7 +47,8 @@ const HeroSection = () => {
       name: '',
       email: '',
       phone: '',
-      school: ''
+      school: '',
+      course: ''
     });
   };
   return (
@@ -287,10 +300,42 @@ const HeroSection = () => {
                     </div>
                   </div>
 
+                  {/* Course Selection */}
+                  <div className="space-y-1">
+                    <label htmlFor="course" className="block text-sm font-medium text-gray-300">
+                      Interested Course <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative group">
+                      <select
+                        id="course"
+                        name="course"
+                        value={formData.course}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 pr-10 text-sm text-white bg-white/5 border border-white/20 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 appearance-none cursor-pointer hover:border-yellow-400/50 focus:outline-none"
+                        required
+                      >
+                        <option value="" className="bg-gray-800 text-gray-300">Select a course</option>
+                        {courses.map((course, index) => (
+                          <option key={index} value={course} className="bg-gray-900 text-white">
+                            {course}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                        <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-500/20 group-hover:bg-yellow-500/30 transition-colors duration-200">
+                          <svg className="w-3 h-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-yellow-500/5 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+
                   {/* School/College Field */}
                   <div className="space-y-1">
                     <label htmlFor="school" className="block text-sm font-medium text-gray-300">
-                      School/College
+                      Current School/College
                     </label>
                     <div className="relative">
                       <input
@@ -300,7 +345,7 @@ const HeroSection = () => {
                         value={formData.school}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 text-sm text-white bg-white/5 border border-white/20 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200 placeholder-gray-400"
-                        placeholder="Your school/college name"
+                        placeholder="Your current school/college name"
                       />
                     </div>
                   </div>

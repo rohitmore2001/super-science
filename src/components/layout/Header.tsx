@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaBars, FaTimes, FaGraduationCap } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaBars, FaTimes, FaGraduationCap, FaYoutube } from 'react-icons/fa';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,10 +24,10 @@ const Header = () => {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, href: '#', label: 'Facebook' },
-    { icon: FaTwitter, href: '#', label: 'Twitter' },
-    { icon: FaInstagram, href: '#', label: 'Instagram' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/profile.php?id=61571296202560', label: 'Facebook' },
+    { icon: FaYoutube, href: '#', label: 'Youtube' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/super_science_academy?igsh=MTR1c3U1aDM0Zm4xbA==', label: 'Instagram' },
+    // { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
   ];
 
   return (
@@ -64,6 +64,7 @@ const Header = () => {
                   whileTap={{ scale: 0.95 }}
                   className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white hover:text-blue-600 transition-all duration-300"
                   aria-label={social.label}
+                  target="_blank"
                 >
                   <social.icon className="text-sm" />
                 </motion.a>
