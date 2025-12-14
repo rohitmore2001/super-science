@@ -11,15 +11,26 @@ const ContactSection = () => {
     threshold: 0.1,
   });
 
+  const courses = [
+    'IIT Medical foundation course for 8th, 9th, and 10th grade students',
+    'Science Stream Coaching for 11th and 12th Grade',
+    'JEE Mains and Advanced Preparation',
+    'NEET Coaching',
+    'MHT-CET Preparation',
+    'MHT-CET Crash Course',
+    'Others'
+  ];
+
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
     school: '',
     address: '',
     message: '',
+    course: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -32,6 +43,7 @@ const ContactSection = () => {
 
 *Name:* ${formData.name}
 *Mobile:* ${formData.mobile}
+*Course Interested In:* ${formData.course || 'Not specified'}
 *School/College:* ${formData.school}
 *Address:* ${formData.address}
 
@@ -55,6 +67,7 @@ ${formData.message}
       school: '',
       address: '',
       message: '',
+      course: '',
     });
 
     // Show success message
@@ -199,13 +212,50 @@ ${formData.message}
                     </motion.div>
                   </div>
 
+                  {/* Course Selection */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.5 }}
+                    className="space-y-1.5"
                   >
                     <label className="block text-sm font-bold text-gray-800 mb-2.5 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600"></span>
+                      Interested Course *
+                    </label>
+                    <div className="relative group">
+                      <select
+                        name="course"
+                        value={formData.course}
+                        onChange={handleChange}
+                        className="w-full px-5 py-4 pr-12 text-gray-700 bg-gradient-to-br from-gray-50 to-white rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 focus:outline-none transition-all appearance-none cursor-pointer hover:border-gray-300 hover:shadow-sm"
+                        required
+                      >
+                        <option value="">Select a course</option>
+                        {courses.map((course, index) => (
+                          <option key={index} value={course}>
+                            {course}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                        <div className="w-5 h-5 flex items-center justify-center rounded-full bg-cyan-500/20 group-hover:bg-cyan-500/30 transition-colors duration-200">
+                          <svg className="w-3 h-3 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* School/College Field */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.55 }}
+                  >
+                    <label className="block text-sm font-bold text-gray-800 mb-2.5 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-green-600 to-emerald-600"></span>
                       School / College *
                     </label>
                     <input
@@ -215,7 +265,7 @@ ${formData.message}
                       onChange={handleChange}
                       placeholder="Enter your school or college name"
                       required
-                      className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 focus:outline-none transition-all bg-gradient-to-br from-gray-50 to-white hover:border-gray-300 hover:shadow-sm"
+                      className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition-all bg-gradient-to-br from-gray-50 to-white hover:border-gray-300 hover:shadow-sm"
                     />
                   </motion.div>
 

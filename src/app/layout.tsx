@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
   openGraph: {
     title: "Super Science Academy Gadhinglaj",
-    description: "Premier coaching institute for JEE, NEET, and competitive exams",
+    description: "Premier coaching institute for IIT-JEE, NEET, MHT-CET, State Board and competitive exams",
     type: "website",
     locale: "en_IN",
     siteName: "Super Science Academy",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Super Science Academy Gadhinglaj",
-    description: "Premier coaching institute for JEE, NEET, and competitive exams",
+    description: "Premier coaching institute for IIT-JEE, NEET, MHT-CET, State Board and competitive exams",
   },
   icons: {
     icon: "/assets/images/imgs/img1.png",
