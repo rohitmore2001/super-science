@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaChalkboardTeacher, FaTrophy, FaBook, FaClipboardCheck, FaUsers, FaBuilding, FaQuestionCircle, FaChartLine, FaMobileAlt, FaStar, FaCheckCircle } from 'react-icons/fa';
+import staffImg from '../../../public/assets/images/superscienceStaff.jpeg'
 
 const ServicesSection = () => {
   const [ref, inView] = useInView({
@@ -104,6 +105,23 @@ const ServicesSection = () => {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-pink-400/10 to-orange-400/10 rounded-full blur-3xl opacity-50"></div>
 
       <div className="container-custom relative z-10">
+        {/* Banner Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src={`/assets/images/superscienceStaff.jpeg`} 
+              alt="Super Science Staff" 
+              className="w-full h-auto object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+        </motion.div>
+
         {/* Section Header */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
